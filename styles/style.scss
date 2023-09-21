@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(49, 223, 101), rgb(29, 124, 179));
+}
+
+i {
+  pointer-events: none;
+}
+
+@mixin centerSetting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin blockSetting {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+@mixin formElementSetting {
+  height: 35px;
+}
+
+header {
+  @include centerSetting();
+  height: 10vh;
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+form {
+  @include centerSetting();
+
+  input,
+  button {
+    @include blockSetting();
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+input {
+  padding: 5px 15px;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  @include formElementSetting();
+}
+
+button {
+  background-color: rgb(15, 90, 65);
+  color: white;
+  border-radius: 5px;
+  @include blockSetting();
+  @include formElementSetting();
+  &:hover {
+    background-color: rgb(197, 191, 191);
+  }
+}
+
+div.sort {
+  @include centerSetting();
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  div.todo {
+    display: flex;
+    width: 60vh;
+    align-items: center;
+    margin: 0.2rem 0rem;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.1s ease;
+    p {
+      margin: 0rem 0.5rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.25rem;
+    }
+    button {
+      border-radius: 5px;
+    }
+    p.todoText {
+      width: 25vh;
+    }
+    p.todoDate {
+      width: 30vh;
+    }
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.delLine {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
